@@ -1,0 +1,15 @@
+# 核心依赖：文档图像去倾斜与旋转校正
+opencv-python>=4.8.0
+numpy>=1.24.0
+onnxruntime>=1.15.0
+
+# PDF处理相关（仅 pdf_page_to_image.py 需要）
+pdf2image>=1.16.0
+PyPDF2>=3.0.0
+
+# 说明：
+# - opencv-python: 图像处理和FFT频谱分析
+# - numpy: 数值计算
+# - onnxruntime: 运行方向分类模型
+# - pdf2image: PDF转图像（需要系统安装 poppler-utils）
+# - PyPDF2: PDF页面提取和合并
