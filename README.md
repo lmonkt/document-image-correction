@@ -21,12 +21,10 @@
 1. **去倾斜**：基于 **FFT 频谱分析 + 自适应径向投影**
    - 无需训练模型，纯图像处理实现
    - 精度高（平均误差 < 0.1°）
-   - 速度快（典型文档 < 100ms）
    
 2. **方向分类**：轻量级 **ONNX 深度学习模型**
    - 4分类（0°/90°/180°/270°）
    - 支持置信度阈值过滤
-   - CPU推理，无需GPU
 
 3. **工程优化**
    - 单次仿射变换，避免多次旋转的质量损失
@@ -215,7 +213,7 @@ cropped_img = cropper.execute(rotated_img)
 1. **数据场景分析**：三种典型倾斜/旋转场景
 2. **去倾斜算法详解**：三种实现方法对比（jdeskew-exp / jdeskew-lib / 自定义方法）
 3. **评估指标与实验**：多个公开数据集的性能对比
-4. **方向分类详解**：模型训练、推理、置信度使用
+4. **方向分类详解**：模型推理、置信度使用
 5. **完整方案设计**：如何组合去倾斜和旋转校正
 6. **图像预处理优化**：文本裁剪的原理和效果
 
@@ -233,4 +231,5 @@ cropped_img = cropper.execute(rotated_img)
 
 - [jdeskew](https://github.com/phamquiluan/jdeskew)：去倾斜算法的参考实现
 - [PaddleClas](https://github.com/PaddlePaddle/PaddleClas)：方向分类模型训练框架
+- [RapidOrientation](https://github.com/RapidAI/RapidOrientation)
 - OpenCV：图像处理基础库
