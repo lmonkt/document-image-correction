@@ -24,6 +24,7 @@
 
 - `README.md`: 本文件
 - `USAGE.md`: 使用说明
+- `JDESKEW_EXP_PERF_ANALYSIS.md`: jdeskew exp 单进程性能分析（py-spy + line_profiler）
 
 ## 三种去倾斜方法说明
 
