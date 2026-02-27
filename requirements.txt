@@ -7,9 +7,31 @@ onnxruntime>=1.15.0
 pdf2image>=1.16.0
 PyPDF2>=3.0.0
 
+# ──────────────────────────────────────────────────────
+# 去倾斜算法加速（可选，按运行环境选择安装其中一项）
+# ──────────────────────────────────────────────────────
+
+# [可选] CPU 加速：Numba JIT 编译径向投影（约 1.2x 提速）
+# numba>=0.57.0
+
+# [可选] NVIDIA GPU 加速（CuPy，约 9x 提速）
+# 根据实际 CUDA 版本选择，nvcc -V 可查询版本
+# CUDA 12.x：
+# cupy-cuda12x
+# CUDA 11.x：
+# cupy-cuda11x
+
+# [可选] Ascend NPU 加速（torch_npu，约 4x 提速）
+# torch 和 torch_npu 需配合 CANN 版本安装，请参考华为官方文档
+# torch>=2.1.0
+# torch_npu  # 版本与 torch 对应，如 torch_npu==2.7.1.post2
+
 # 说明：
 # - opencv-python: 图像处理和FFT频谱分析
 # - numpy: 数值计算
 # - onnxruntime: 运行方向分类模型
 # - pdf2image: PDF转图像（需要系统安装 poppler-utils）
 # - PyPDF2: PDF页面提取和合并
+# - numba: CPU JIT 编译，提升径向投影速度
+# - cupy-cuda12x/11x: 基于 NVIDIA GPU 的 FFT 和径向投影加速
+# - torch_npu: 基于 Ascend NPU 的 FFT 和径向投影加速
